@@ -17,7 +17,7 @@ def geninitscript(tag,port):
                "systemctl start docker\n" \
                "echo '-Bi_Y[x#}j]4sRXA5qKZ' | docker login iad.ocir.io --username biascorpoci/prasadpatil --password-stdin\n" \
                 "if [ $? -eq 0 ]\n then\n echo 'Docker login succeded' >> /tmp/docker_login.status\n " \
-               "docker pull iad.ocir.io/biascorpoci/devopstest:"+tag+"\n image_id=`sudo docker images --format '{{.ID}}'`\n " \
+               "docker pull iad.ocir.io/biascorpoci/devopstest2:"+tag+"\n image_id=`sudo docker images --format '{{.ID}}'`\n " \
                "sudo docker run -P $image_id\nelse\necho 'Docker login failed' >> /tmp/docker_login.status\n fi"
     fileout.write(init_str)
     fileout.close()
